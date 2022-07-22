@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+:root {
+  --primary: #f38e00;
+  --background: #000000;
+  --titles: #e8e8e8;
+  --subtitle: #dbdbdb;
+  --border: #c8c8c8;
+  --radius: 8px;
+  --padding: 100px
+}
+
+@media (max-width: 768px) {
+  :root {
+    --padding: 50px
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --padding: 10px
+  }
+}
+
+::selection {
+  background-color: var(--titles);
+  color: var(--background)
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary);
+}
+
+p {
+  color: var(--subtitle);
+}
+
+a {
+  color: var(--titles);
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+input {
+  margin: 20px 0;
+  padding: 10px;
+  border: solid 1px var(--titles);
+  outline: none;
+  background-color: var(--background);
+  width: 80%;
+}
+
+svg {
+  width: 1.25em;
+  height: 1.25em;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.vicon-fill-none {
+  fill: none;
+}
+
+.vicon-stroke-width {
+  stroke-width: 32px;
+}
