@@ -1,14 +1,25 @@
 <script>
+	import Box from '../components/box.svelte';
 	import Icons from '../components/icons.svelte';
 	import Navbar from '../components/navbar.svelte';
 	import Search from '../components/search.svelte';
-	export let svgs;
-	$: data = svgs;
-	const filter = (e) => {
-		const value = e.target.value;
-		const filtered = svgs.filter((svg) => svg.name.toLowerCase().includes(value.toLowerCase()));
-		data = filtered;
+	import { DATA } from '../lib/data';
+
+	$: data = DATA;
+
+	const debounce = (fn, delay) => {
+		let timeout;
+		return (...args) => {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => fn(...args), delay);
+		};
 	};
+
+	const filter = debounce((e) => {
+		const value = e.target.value.toLowerCase();
+		data = DATA.filter((icon) => icon.title.toLowerCase().includes(value));
+		console.log(data);
+	}, 300);
 </script>
 
 <Navbar />
@@ -16,13 +27,14 @@
 	<main class="main">
 		<header class="header">
 			<h1 class="title">Un set de iconos gratis simple y facil de usar</h1>
-			<p class="subtitle">Busca iconos los iconos que necesitas y copialos con un solo click</p>
+			<p class="subtitle">Busca los iconos que necesitas y copialos con un solo click</p>
 			<Search onKeyUpHandler={filter} />
 		</header>
 	</main>
 	<div class="icons">
 		<Icons {data} />
 	</div>
+	<Box />
 </section>
 
 <style>

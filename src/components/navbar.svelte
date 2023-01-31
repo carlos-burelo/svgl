@@ -1,7 +1,7 @@
 <nav class="navbar">
-	<div class="brand">V Icons</div>
+	<div class="brand">SVGL</div>
 	<div class="links">
-		<a href="http://github.com/carlos-burelo/v-icons" target="_blank" rel="noopener noreferrer"
+		<a href="http://github.com/carlos-burelo/svgl" target="_blank" rel="noopener noreferrer"
 			>Github</a
 		>
 	</div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Card from './card.svelte';
-	export let data = [];
+	export let data;
 </script>
 
 <section class="container">

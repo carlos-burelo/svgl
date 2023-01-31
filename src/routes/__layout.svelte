@@ -9,7 +9,7 @@
 		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap"
 		rel="stylesheet"
 	/>
-	<title>V-Icons</title>
+	<title>SVGL</title>
 </svelte:head>
 
 <slot />

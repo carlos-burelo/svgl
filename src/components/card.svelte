@@ -1,10 +1,11 @@
 <script>
+	import { store } from '../lib/store';
 	export let icon;
-	let name = icon.name.replace('.svg', '').split('-').join(' ');
+	let title = icon.title.replace(/\s/g, '-');
 </script>
 
-<div class="icon" title={name}>
-	{@html icon.content}
+<div class="icon" {title} on:click={store.set({ title, data: icon.data })}>
+	{@html icon.data}
 </div>
 
 <style>
